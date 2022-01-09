@@ -1,0 +1,86 @@
+\renewcommand\YEAR{\headerformat{[[ .Header.LeftYear ]]}}
+\renewcommand\MONTH{\headerformat{[[ .Header.LeftMonth ]]}}
+\renewcommand\WEEK{\headerformat{[[ .Header.LeftWeek ]]}}
+
+% If in a month overlapping week, show two weeks of each month.
+% Foreach (day in today.add31 date span, write out all days, and then all dates. Make
+% saturday and sunday bold, and draw a gray box around the current week.
+[[ range $val := .Header.FirstWeek.Days -]]
+    \monthdate{[[$val.DayOfWeek]]}{[[$val.DayOfWeekNumber]]}%
+[[ end -]]
+\setlength{\fboxsep}{0pt}\fcolorbox{lgray}{lgray}{%
+[[ range $val := .Header.SecondWeek.Days -]]
+    \monthdate{[[$val.DayOfWeek]]}{[[$val.DayOfWeekNumber]]}%
+[[ end -]]
+}%
+[[ range $val := .Header.ThirdWeek.Days -]]
+\monthdate{[[$val.DayOfWeek]]}{[[$val.DayOfWeekNumber]]}%
+[[ end -]]
+[[ range $val := .Header.RemainingDays.Days -]]
+    \monthdate{[[$val.DayOfWeek]]}{[[$val.DayOfWeekNumber]]}%
+[[ end -]]\\
+% Note section top of page
+\notelines
+\fatline
+\vspace{-.5em}
+% First day
+\dayblockleft{[[ .Monday.Num ]]}
+             {[[ .Monday.Name ]]}
+             {[[ .Monday.Event1 ]]}
+             {[[ .Monday.Event1 ]]}
+             {[[ .Monday.Event1 ]]}
+
+\vspace{-.5em}
+% Second day
+\dayblockleft{[[ .Tuesday.Num ]]}
+             {[[ .Tuesday.Name ]]}
+             {[[ .Tuesday.Event1 ]]}
+             {[[ .Tuesday.Event1 ]]}
+             {[[ .Tuesday.Event1 ]]}
+
+\vspace{-.5em}
+% Third day
+\dayblockleft{[[ .Wednesday.Num ]]}
+             {[[ .Wednesday.Name ]]}
+             {[[ .Wednesday.Event1 ]]}
+             {[[ .Wednesday.Event1 ]]}
+             {[[ .Wednesday.Event1 ]]}
+
+\newpage
+% SECOND PAGE
+\renewcommand\YEAR{\headerformat{[[ .Header.RightYear ]]}}
+\renewcommand\MONTH{\headerformat{[[ .Header.RightMonth ]]}}
+\renewcommand\WEEK{\headerformat{[[ .Header.RightWeek ]]}}
+
+\vspace*{-1.55em}
+% Fourth day
+\dayblockright{[[ .Thursday.Num ]]}
+              {[[ .Thursday.Name ]]}
+              {[[ .Thursday.Event1 ]]}
+              {[[ .Thursday.Event1 ]]}
+              {[[ .Thursday.Event1 ]]}
+
+\vspace{-.5em}
+% Fifth day
+\dayblockright{[[ .Friday.Num ]]}
+              {[[ .Friday.Name ]]}
+              {[[ .Friday.Event1 ]]}
+              {[[ .Friday.Event1 ]]}
+              {[[ .Friday.Event1 ]]}
+
+\vspace{-.5em}
+% Sixth day
+\dayblockright{\color{Maroon} [[ .Saturday.Num ]]}
+              {\color{Maroon} [[ .Saturday.Name ]]}
+              {[[ .Saturday.Event1 ]]}
+              {[[ .Saturday.Event1 ]]}
+              {[[ .Saturday.Event1 ]]}
+
+\vspace{-.5em}
+% Seventh day
+\dayblockright{\color{Maroon} [[ .Sunday.Num ]]}
+              {\color{Maroon} [[ .Sunday.Name ]]}
+              {[[ .Sunday.Event1 ]]}
+              {[[ .Sunday.Event1 ]]}
+              {[[ .Sunday.Event1 ]]}
+
