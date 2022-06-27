@@ -1,0 +1,88 @@
+\renewcommand\YEAR{\headerformat{YEAR}}
+\renewcommand\MONTH{\headerformat{MONTH}}
+\renewcommand\WEEK{\headerformat{WEEKNO}}
+
+% If in a month overlapping week, show two weeks of each month.
+% Foreach (day in today.add31 date span, write out all days, and then all dates. Make
+% saturday and sunday bold, and draw a gray box around the current week.
+\makeatletter
+% Print first week (S over digit)
+\@for\ddd:={[[- .Header.FirstWeek -]]}\do{\monthdate{S}{\ddd}}%
+% Print second week (S over digit)
+\setlength{\fboxsep}{0pt}\fcolorbox{lightgray}{lightgray}{%
+    \@for\ddd:={[[- .Header.SecondWeek -]]}\do{\monthdate{S}{\ddd}}%
+}%
+\@for\ddd:={[[- .Header.ThirdWeek -]]}\do{\monthdate{S}{\ddd}}%
+% Remaining days in month. 10 days total
+    \@for\ddd:={[[- .Header.RemainingDays -]]}\do{\monthdate{S}{\ddd}}
+\makeatother\\
+% Note section top of page
+\notelines
+\fatline
+\vspace{-.5em}
+% First day
+\textline{{\huge \textbf{09} {\scriptsize \raisebox{1.5em}{[% week.monday.text %]}}}}%
+    {\raisebox{1.0em}{[[ .Monday.Event1 ]]}\\[-1em]\scriptsize\raisebox{1.0em}{[[ .Monday.Event2 ]]}}%
+        {\raisebox{1.0em}{[[ .Monday.Event3 ]]}\\[-1em]\raisebox{0.7em}{[[ .Monday.Event4 ]]}}%
+         % TODO: Allow three birthdays on top of each other.
+         \vspace{-1.5em}
+\notelines
+\fatline
+\vspace{-.5em}
+% Second day
+\textline{{\huge \textbf{10} {\scriptsize \raisebox{1.5em}{tirsdag}}}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\scriptsize\raisebox{1.0em}{Nytårsaften}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\raisebox{0.7em}{\bday{Line}{1992}}}%
+         % TODO: Allow three birthdays on top of each other.
+         \vspace{-1.5em}
+\notelines
+\fatline
+\vspace{-.5em}
+% Second day
+\textline{{\huge \textbf{11} {\scriptsize \raisebox{1.5em}{onsdag}}}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\scriptsize\raisebox{1.0em}{Nytårsaften}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\raisebox{0.7em}{\bday{Line}{1992}}}%
+         % TODO: Allow three birthdays on top of each other.
+         \vspace{-1.5em}
+\notelines
+\fatline
+
+\newpage
+
+% SECOND PAGE
+
+% First day
+\textline{{\huge \textbf{12} {\scriptsize \raisebox{1.5em}{torsdag}}}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\scriptsize\raisebox{1.0em}{Nytårsaften}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\raisebox{0.7em}{\bday{Line}{1992}}}%
+         % TODO: Allow three birthdays on top of each other.
+         \vspace{-1.5em}
+\notelines
+\fatline
+\vspace{-.5em}
+% First day
+\textline{{\huge \textbf{13} {\scriptsize \raisebox{1.5em}{fredag}}}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\scriptsize\raisebox{1.0em}{Nytårsaften}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\raisebox{0.7em}{\bday{Line}{1992}}}%
+         % TODO: Allow three birthdays on top of each other.
+         \vspace{-1.5em}
+\notelines
+\fatline
+\vspace{-.5em}
+% Second day
+\textline{{\huge \textbf{14} {\scriptsize \raisebox{1.5em}{lørdag}}}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\scriptsize\raisebox{1.0em}{Nytårsaften}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\raisebox{0.7em}{\bday{Line}{1992}}}%
+         % TODO: Allow three birthdays on top of each other.
+         \vspace{-1.5em}
+\notelines
+\fatline
+\vspace{-.5em}
+% Second day
+\textline{{\huge \textbf{15} {\scriptsize \raisebox{1.5em}{søndag}}}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\scriptsize\raisebox{1.0em}{Nytårsaften}}%
+         {\raisebox{1.0em}{\bday{Line}{1992}}\\[-1em]\raisebox{0.7em}{\bday{Line}{1992}}}%
+         % TODO: Allow three birthdays on top of each other.
+         \vspace{-1.5em}
+\notelines
+\fatline

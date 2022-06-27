@@ -1,0 +1,87 @@
+\renewcommand\YEAR{\headerformat{[[ .Header.LeftYear ]]}}
+\renewcommand\MONTH{\headerformat{[[ .Header.LeftMonth ]]}}
+\renewcommand\WEEK{\headerformat{[[ .Header.LeftWeek ]]}}
+
+% If in a month overlapping week, show two weeks of each month.
+% Foreach (day in today.add31 date span, write out all days, and then all dates. Make
+% saturday and sunday bold, and draw a gray box around the current week.
+[[ range $val := .Header.FirstWeek.Days -]]
+    \monthdate{[[$val.DayOfWeek]]}{[[$val.DayOfWeekInt]]}%
+[[ end -]]
+\setlength{\fboxsep}{0pt}\fcolorbox{lightgray}{lightgray}{%
+[[ range $val := .Header.SecondWeek.Days -]]
+    \monthdate{[[$val.DayOfWeek]]}{[[$val.DayOfWeekInt]]}%
+[[ end -]]
+}%
+[[ range $val := .Header.ThirdWeek.Days -]]
+\monthdate{[[$val.DayOfWeek]]}{[[$val.DayOfWeekInt]]}%
+[[ end -]]
+[[ range $val := .Header.RemainingDays.Days -]]
+    \monthdate{[[$val.DayOfWeek]]}{[[$val.DayOfWeekInt]]}%
+[[ end -]]\\
+% Note section top of page
+\notelines
+\fatline
+\vspace{-.5em}
+% First day
+\textline{{\huge \textbf{[[ .Monday.Num ]]} {\scriptsize \raisebox{1.5em}{[[ .Monday.Name ]]}}}}%
+    {\raisebox{1.0em}{[[ .Monday.Event1 ]]}\\[-1em]\scriptsize\raisebox{1.0em}{[[ .Monday.Event2 ]]}}%
+        {\raisebox{1.0em}{[[ .Monday.Event3 ]]}\\[-1em]\raisebox{0.7em}{[[ .Monday.Event4 ]]}}%
+         \vspace{-1.5em}
+\notelines
+\fatline
+\vspace{-.5em}
+% Second day
+\textline{{\huge \textbf{[[ .Tuesday.Num ]]} {\scriptsize \raisebox{1.5em}{[[ .Tuesday.Name ]]}}}}%
+    {\raisebox{1.0em}{[[ .Tuesday.Event1 ]]}\\[-1em]\scriptsize\raisebox{1.0em}{[[ .Tuesday.Event2 ]]}}%
+        {\raisebox{1.0em}{[[ .Tuesday.Event3 ]]}\\[-1em]\raisebox{0.7em}{[[ .Tuesday.Event4 ]]}}%
+         \vspace{-1.5em}
+\notelines
+\fatline
+\vspace{-.5em}
+% Third day
+\textline{{\huge \textbf{[[ .Wednesday.Num ]]} {\scriptsize \raisebox{1.5em}{[[ .Wednesday.Name ]]}}}}%
+    {\raisebox{1.0em}{[[ .Wednesday.Event1 ]]}\\[-1em]\scriptsize\raisebox{1.0em}{[[ .Wednesday.Event2 ]]}}%
+        {\raisebox{1.0em}{[[ .Wednesday.Event3 ]]}\\[-1em]\raisebox{0.7em}{[[ .Wednesday.Event4 ]]}}%
+         \vspace{-1.5em}
+\notelines
+\fatline
+
+\newpage
+\renewcommand\YEAR{\headerformat{[[ .Header.RightYear ]]}}
+\renewcommand\MONTH{\headerformat{[[ .Header.RightMonth ]]}}
+\renewcommand\WEEK{\headerformat{[[ .Header.RightWeek ]]}}
+
+% SECOND PAGE
+
+% Fourth day
+\textline{\raisebox{1.0em}{[[ .Thursday.Event1 ]]}\\[-1em]\scriptsize\raisebox{1.0em}{[[ .Thursday.Event2 ]]}}%
+         {\raisebox{1.0em}{[[ .Thursday.Event3 ]]}\\[-1em]\raisebox{0.7em}{[[ .Thursday.Event4 ]]}}%
+         {{\scriptsize \raisebox{1.5em}{[[ .Thursday.Name ]]}} {\huge \textbf{[[ .Thursday.Num ]]}}}%
+         \vspace{-1.5em}
+\notelines
+\fatline
+\vspace{-.5em}
+% Fifth day
+\textline{\raisebox{1.0em}{[[ .Friday.Event1 ]]}\\[-1em]\scriptsize\raisebox{1.0em}{[[ .Friday.Event2 ]]}}%
+         {\raisebox{1.0em}{[[ .Friday.Event3 ]]}\\[-1em]\raisebox{0.7em}{[[ .Friday.Event4 ]]}}%
+         {{\scriptsize \raisebox{1.5em}{[[ .Friday.Name ]]}} {\huge \textbf{[[ .Friday.Num ]]}}}%
+         \vspace{-1.5em}
+\notelines
+\fatline
+\vspace{-.5em}
+% Sixth day
+\textline{\raisebox{1.0em}{[[ .Saturday.Event1 ]]}\\[-1em]\scriptsize\raisebox{1.0em}{[[ .Saturday.Event2 ]]}}%
+         {\raisebox{1.0em}{[[ .Saturday.Event3 ]]}\\[-1em]\raisebox{0.7em}{[[ .Saturday.Event4 ]]}}%
+         {{\scriptsize \raisebox{1.5em}{[[ .Saturday.Name ]]}} {\huge \textbf{[[ .Saturday.Num ]]}}}%
+         \vspace{-1.5em}
+\notelines
+\fatline
+\vspace{-.5em}
+% Seventh day
+\textline{\raisebox{1.0em}{[[ .Sunday.Event1 ]]}\\[-1em]\scriptsize\raisebox{1.0em}{[[ .Sunday.Event2 ]]}}%
+         {\raisebox{1.0em}{[[ .Sunday.Event3 ]]}\\[-1em]\raisebox{0.7em}{[[ .Sunday.Event4 ]]}}%
+         {{\scriptsize \raisebox{1.5em}{[[ .Sunday.Name ]]}} {\huge \textbf{[[ .Sunday.Num ]]}}}%
+         \vspace{-1.5em}
+\notelines
+\fatline

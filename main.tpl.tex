@@ -1,0 +1,99 @@
+\documentclass[twoside]{article}
+\usepackage[ a5paper
+           , left=1cm
+           , right=1cm
+           , top=1cm
+           , headsep=.2cm
+           , bottom=1cm
+%          , margin=1cm
+%          , headheight=13.6pt
+%          , showframe
+           ]{geometry}
+           \usepackage{layout}
+
+% Sans-serif font, Tex-Gyre Adventor
+\usepackage[T1]{fontenc}
+\usepackage{tgadventor}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{graphicx}
+% For changing linespace with setstretch
+\usepackage{setspace}
+\usepackage[ usenames
+           , dvipsnames
+           , svgnames
+           , x11names
+           ]{xcolor}
+
+\definecolor{lgray}{RGB}{211,211,211}
+\definecolor{dgray}{RGB}{127,127,127}
+
+\newcommand\headerformat[1]{\textbf{#1}}
+\newcommand\YEAR{\headerformat{2019}}
+\newcommand\MONTH{\headerformat{December}}
+\newcommand\WEEK{\headerformat{51}}
+\newcommand\bday[2]{\scriptsize
+\includegraphics[height=\fontcharht\font`\B]{dk.pdf}\hspace{.5em} #1 (#2)}
+
+\newcommand\textline[4][t]{%
+    \par\smallskip\noindent\parbox[#1]{.333\textwidth}{\raggedright#2}%
+  \parbox[#1]{.333\textwidth}{\centering{#3}}%
+  \parbox[#1]{.333\textwidth}{\raggedleft#4}\par\smallskip%
+}
+
+\newcommand\dayblockleft[6]{%
+    \textline{{\huge \textbf{#1} {\scriptsize \raisebox{1.5em}{#2}}}}%
+             {\raisebox{1.0em}{#3}\\[-1em]\scriptsize\raisebox{1.0em}{#4}}%
+             {\raisebox{1.0em}{#5}\\[-1em]\raisebox{0.7em}{#6}}%
+    \vspace{-1.5em}
+    \notelines
+    \fatline
+    \par
+}
+
+\newcommand\dayblockright[6]{%
+    \textline{\raisebox{1.0em}{#3}\\[-1em]\scriptsize\raisebox{1.0em}{#4}}%
+             {\raisebox{1.0em}{#5}\\[-1em]\raisebox{0.7em}{#6}}%
+             {{\scriptsize \raisebox{1.5em}{#2}} {\huge \textbf{#1}}}%
+    \vspace{-1.5em}
+    \notelines
+    \fatline
+    \par
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.7pt}
+\renewcommand{\headrule}{\vspace{-0.6em}\hbox to\headwidth{\color{dgray}\leaders\hrule height \headrulewidth\hfill}}
+%\lhead{\YEAR}
+%\chead{\MONTH}
+%\rhead{\WEEK}
+\fancyhead[CO,CE]{\color{dgray} \MONTH}
+\fancyhead[LE]   {\color{dgray} \YEAR}
+\fancyhead[RO]   {\color{dgray} \YEAR}
+\fancyhead[RE]   {\color{dgray} \WEEK}
+\fancyhead[LO]   {\color{dgray} \WEEK}
+\usepackage{xcolor}
+\newcommand\monthdate[2]{%
+    \begin{minipage}[c][2em][c]{.0322580645\textwidth}%
+        \begin{center}\scriptsize #1 \\ #2\end{center}%
+    \end{minipage}%
+}
+\newcommand\fatline{%
+    {\color{dgray}\rule{\textwidth}{.7pt}}%\\[5pt]
+}
+\newcommand\notelines{%
+    \setstretch{1.45}
+    {\color{gray}\rule{\textwidth}{.05pt}}
+    {\color{gray}\rule{\textwidth}{.05pt}}
+    {\color{gray}\rule{\textwidth}{.05pt}}
+    {\color{gray}\rule{\textwidth}{.05pt}}
+    {\color{gray}\rule{\textwidth}{.05pt}}
+    {\color{gray}\rule{\textwidth}{.05pt}}
+}
+
+\begin{document}
+
+TEMP FOR FULL SPREAD
